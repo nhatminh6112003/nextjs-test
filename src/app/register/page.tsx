@@ -23,8 +23,8 @@ const Register = () => {
           last_name: "",
           first_name: "",
         });
-        alert("Create customer success !");
-        router.push("/");
+        alert("Register success !");
+        router.push("/login");
       }
     } catch (error) {
       // console.log(error?.data?.message);

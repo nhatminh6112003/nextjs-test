@@ -46,9 +46,18 @@ const Cart = () => {
       user_id: currentUser?.id,
       amount: totalCart,
     });
+
+    const handleAddOrderItem = carts?.map(async (item) => {
+      await axios.post("http://localhost:5000/orderItem", {
+        order_id: createOrder?.data?.order_id,
+        product_id: item?.id,
+        point: item?.point,
+        quantity: item?.quantity,
+      });
+    });
     alert(createOrder?.data?.message);
   };
-  return (
+  return currentUser ? (
     <div className="bg-[#f5f5fa] pb-16 rounded-[4px]">
       <div className="2xl:container xl:container lg:container 2xl:mx-auto xl:mx-auto lg:mx-auto 2xl:px-16 xl:px-16 lg:px-16 px-3">
         <h4 className="py-10 font-medium text-[#000000] text-xl">CART</h4>
@@ -146,6 +155,15 @@ const Cart = () => {
           )}
         </div>
       </div>
+    </div>
+  ) : (
+    <div className="text-center mt-4 ">
+      <Link
+        href={"/login"}
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      >
+        Please Login
+      </Link>
     </div>
   );
 };

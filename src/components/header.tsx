@@ -5,7 +5,6 @@ import useCurrentUser from "@/hooks/useCurrentUser";
 import { useCarts } from "@/hooks/useCarts";
 const Header = () => {
   const { currentUser, clearUser } = useCurrentUser();
-  const { removeCart } = useCarts();
 
   return (
     <>
@@ -16,13 +15,13 @@ const Header = () => {
             {/* menu đầu */}
             <div className="flex items-center  justify-between flex-1  ">
               <div className="w-48 h-10 mr-4">
-                <a href="/">
+                <Link href="/">
                   {" "}
                   <img
                     className="w-14 "
                     src="https://salt.tikicdn.com/ts/upload/ae/f5/15/2228f38cf84d1b8451bb49e2c4537081.png"
                   />
-                </a>
+                </Link  >
               </div>
             </div>
             <div className="flex items-center justify-between  ">
@@ -33,7 +32,8 @@ const Header = () => {
                   alt=""
                 />
                 {currentUser?.username ? (
-                  <span className="flex flex-col">
+                  <div>
+                    <span className="flex flex-col">
                     <span className="inline-block text-xs">
                       {currentUser?.first_name} {currentUser?.last_name}
                     </span>
@@ -41,12 +41,20 @@ const Header = () => {
                       href="/"
                       onClick={() => {
                         clearUser();
+                        localStorage.removeItem('carts')
                       }}
                       className="text-xs logout"
                     >
                       Logout
                     </a>
                   </span>
+                  <div className="dropdown inline-block relative">
+                  <Link href='/order' className=" flex items-center text-sm ">
+                  My Order
+                  </Link>
+                </div>
+                
+                  </div>
                 ) : (
                   <span className="inline-block text-xs">
                     <Link href="/login">Login</Link> /
@@ -56,12 +64,12 @@ const Header = () => {
               </div>
               <div className="flex ml-4 items-end cursor-pointer ">
                 <div className="relative">
-                  <a href="/cart">
+                  <Link href="/cart">
                     <img
                       className="w-8 h-8"
                       src="https://salt.tikicdn.com/ts/upload/40/44/6c/b80ad73e5e84aeb71c08e5d8d438eaa1.png"
                     />
-                  </a>
+                  </Link>
                   <a href="/cart"></a>
                 </div>
                 <a href="/cart">

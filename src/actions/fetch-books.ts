@@ -2,7 +2,7 @@
 import { Book } from "./../types/index";
 
 export async function fetchBooks(page: number, keyword = "") {
-  const perPage = 2;
+  const perPage = 4;
   const apiUrl = `http://localhost:5000/books?page=${page}&perPage=${perPage}&keyword=${keyword}`;
   try {
     const response = await fetch(apiUrl);
