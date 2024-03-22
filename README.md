@@ -93,6 +93,9 @@ On the "My Orders" page, you will find the following information for each order:
 - **Canceling an Order**: If an order is in a 'Pending' status and you wish to cancel it, click the 'Cancel Order' button. Please note that orders may only be canceled within a specific timeframe after placing the order.
 
 
+![z5275235214414_11765bf3a0d8fbf42c769b229d565bc8](https://github.com/nhatminh6112003/ITJOBS-FRONTEND/assets/106549349/5c45a2b3-528b-4104-a100-ac6135151bcb)
+
+
 ## Order Details
 
 The "Order Details" page offers an in-depth look at the specific items that make up an order. This interface allows users to review the individual products, their quantities, and associated points within an order.
@@ -108,3 +111,4 @@ When you view the details of an order, the following information is displayed fo
 - **Quantity**: The number of units of the product ordered.
 - **Point**: The cost in points for each unit of the product.
 
+https://github.com/nhatminh6112003/ITJOBS-FRONTEND/assets/106549349/2554a6ba-8c72-4791-83de-76dc55faa75b
