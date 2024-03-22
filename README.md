@@ -111,4 +111,4 @@ When you view the details of an order, the following information is displayed fo
 - **Quantity**: The number of units of the product ordered.
 - **Point**: The cost in points for each unit of the product.
 
-https://github.com/nhatminh6112003/ITJOBS-FRONTEND/assets/106549349/2554a6ba-8c72-4791-83de-76dc55faa75b
+![image](https://github.com/nhatminh6112003/ITJOBS-FRONTEND/assets/106549349/2554a6ba-8c72-4791-83de-76dc55faa75b)
