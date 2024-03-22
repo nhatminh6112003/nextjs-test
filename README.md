@@ -114,4 +114,7 @@ When you view the details of an order, the following information is displayed fo
 ![image](https://github.com/nhatminh6112003/ITJOBS-FRONTEND/assets/106549349/2554a6ba-8c72-4791-83de-76dc55faa75b)
 ### VIDEO DEMO
 
-![Alt text]([https://youtube.com/embed/VIDEO_ID](https://github.com/nhatminh6112003/nextjs-test/assets/106549349/91f303e0-ede9-421d-aa94-b3d8592819ad)https://github.com/nhatminh6112003/nextjs-test/assets/106549349/91f303e0-ede9-421d-aa94-b3d8592819ad)
+
+
+https://github.com/nhatminh6112003/nextjs-test/assets/106549349/6ffcd06b-282a-4c50-bb54-82518041d208
+
