@@ -8,7 +8,7 @@ import useCurrentUser from "@/hooks/useCurrentUser";
 const Cart = () => {
   const [myPoint, setMyPoint] = useState<number>(0);
   const { currentUser } = useCurrentUser();
-  const { carts, getCarts, removeCart } = useCarts();
+  const { carts, getCarts, removeCart, setCarts } = useCarts();
   const [totalCart, setTotalCart] = useState<number | null>();
 
   useEffect(() => {
@@ -31,22 +31,26 @@ const Cart = () => {
 
   useEffect(() => {
     if (currentUser) {
-      const getPoint = async () => {
-        const data = await axios.get(
-          `http://localhost:5000/customers/username?username=${currentUser?.username}`
-        );
-        setMyPoint(data?.data?.user?.point);
-      };
       getPoint();
     }
   }, [currentUser]);
-
+  const getPoint = async () => {
+    const data = await axios.get(
+      `http://localhost:5000/customers/username?username=${currentUser?.username}`
+    );
+    setMyPoint(data?.data?.user?.point);
+  };
   const buyBook = async () => {
     const createOrder = await axios.post("http://localhost:5000/orders", {
       user_id: currentUser?.id,
       amount: totalCart,
     });
-
+    console.log("🚀 ~ buyBook ~ createOrder:", createOrder);
+    if (createOrder?.data?.status === 200) {
+      localStorage.removeItem("carts");
+      setCarts([]);
+      getPoint();
+    }
     const handleAddOrderItem = carts?.map(async (item) => {
       await axios.post("http://localhost:5000/orderItem", {
         order_id: createOrder?.data?.order_id,
@@ -131,7 +135,10 @@ const Cart = () => {
               <div className="text-end mt-[25px] cursor-pointer ">
                 <button
                   className="bg-[#ff424e] py-[13px] px-[10px] text-white w-[300px] order_button"
-                  onClick={() => buyBook()}
+                  onClick={() => {
+                    buyBook();
+                    // localStorage.removeItem("carts");
+                  }}
                 >
                   Buy
                 </button>

@@ -40,7 +40,7 @@ const ProductsPage = () => {
             id="search_input"
             className=" rounded-md flex-1 px-3 text-sm text-black outline-0 rounded-l-sm"
             type="search"
-            placeholder="Tìm sản phẩm, danh mục hay thương hiệu mong muốn ..."
+            placeholder="Keyword ..."
           />
           <button
             id="search"

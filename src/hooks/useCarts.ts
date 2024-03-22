@@ -56,5 +56,5 @@ export function useCarts() {
     [getCarts]
   );
 
-  return { carts, getCarts, addCart, removeCart };
+  return { carts, getCarts, addCart, removeCart,setCarts };
 }
